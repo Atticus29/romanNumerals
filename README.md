@@ -1,43 +1,29 @@
 
-# A bash script tool to help streamline creation of new websites for Epicodus
+# A website that converts numbers into Roman numerals
 
-#### 10 Feb., 2017, v.1.0.1
+#### 23 Feb., 2017, v.1.0.0
 
-#### By Mark Fisher
+#### By Mark Fisher and Liam Stabeno
 
 ## Description
 
-This script takes three arguments from the user (repo name, parter 1 initials, and partner 2 initials), and uses those variables to create a directory with repo name, create a "css" subdirectory, create an "img" subdirectory, create a styles.css document in the css subdirectory, create an index.html document in the repo folder, initialized the folder as a git repo, executes `git pair` with partner 1's and partner 2's intials, adds everything, makes a first paired commit, and opens the directory in atom.
+A website that converts numbers input by the user into Roman numerals, which then gets displayed to the user upon submission.
 
 ### Specifications
 
-* The program should return __ when __.
-  * **Input Example**: 
-  * **Output Example**:
+|:---Behavior---:|:---Input---:|:---Output---:|
+|Reject user input if it is a non-numerical string|"evilUser"|"Please enter a number"|
+|Reject user input if the number is greater than 3,999|4002|"Please enter a number less than 4000"|
+|Split the number into sub-numbers of thousands, hundreds, tens, and ones|1499| 1000, 400, 90, 9|
+|Populate each sub-number with as many Ns as warranted, where N is M for thousands, C for hundreds, X for tens, and I for ones|1000, 400, 90, 9|M, CCCC, XXXXXXXXX, IIIIIIIII|
+|If there are nine of any of these strings, replace the last eight with the N in the next order of magnitude (i.e., M for C, C for X, X for I)|M, CCCC, XC, IX|
+|If there are exactly four of any symbol remaining, replace the last three with the half-magnitude value corresponding to the symbol (i.e., D for C, L for X, and V for I)|M, CCCC, XXXX, IIII| M, CD, XL, IV|
+|If there are more than three of any symbol remaining, replace the first five with the half-magnitude value corresponding to the symbol (i.e., D for C, L for X, and V for I)| CCCCCCCC, XXXXXXX, IIIIII|DCCC, LXX, VI|
 
-* The program should return __ when __.
-  * **Input Example**: 
-  * **Output Example**:
 
 ## Setup/Installation Requirements
 
-### If working in pairs
-* Set up your .pairs document for the day
-* Clone this repo. (to your Desktop)
-* Open terminal
-* Navigate to the websiteRepoSetup directory: `cd ~/Desktop/websiteRepoSetup`. **This step is necessary because template files from websiteRepoSetup will need to be copied.**
-* Type `./websiteRepoSetup.sh [yourRepoName] [partner1Initials] [partner2Initials]`
-* Enjoy
-
-### If working alone
-* Clone this repo. (to your Desktop)
-* Open terminal
-* Navigate to the websiteRepoSetup directory: `cd ~/Desktop/websiteRepoSetup`. **This step is necessary because template files from websiteRepoSetup will need to be copied.**
-* Type `./websiteRepoSetupIndivid.sh [yourRepoName] ["Your first and last name in quotes"] [yourEmailAddress]
-* Enjoy
-
-### For the template
-* This repository is meant to be viewed. It can be viewed [here](https://Atticus29.github.io/_repoNameHere_).
+* This repository is meant to be viewed. It can be viewed [here](https://Atticus29.github.io/romanNumerals).
 
 ### Or if you're feeling bold, you can clone OR download a local instance of the site:
 
@@ -46,9 +32,9 @@ This script takes three arguments from the user (repo name, parter 1 initials, a
     * On a Mac, this would be in the Applications/Utilities directory, and is called, "Terminal"
     * Windows uses a Terminal program as well, but a Terminal with all the capabilities we'll require is not installed by default. Thankfully, we can easily download and install a Terminal program that does fit our needs.
 There are many options available, but we recommend using a terminal program called git bash. You can download this free program at [msysgit.github.io](https://git-for-windows.github.io/).
-  * Clone this track survey repository by typing, `git clone https://github.com/Atticus29/TrackSuggester.git` 
-* Download 
-  * Click [here](https://github.com/Atticus29/_repoNameHere_/archive/master.zip) to download the repo
+  * Clone this track survey repository by typing, `git clone https://github.com/Atticus29/TrackSuggester.git`
+* Download
+  * Click [here](https://github.com/Atticus29/romanNumerals/archive/master.zip) to download the repo
   * Unzip the zipped repository
 * Open the TrackSuggester folder and double-click on index.html.
 * Make your selections and click submit as instructed on the site.
@@ -79,7 +65,7 @@ Please feel free to contact mark.aaron.fisher@gmail.com for questions
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2017 Mark Fisher and Clifford Grimmell
+Copyright (c) 2017 Mark Fisher and Liam Stabeno
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
