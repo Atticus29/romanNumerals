@@ -11,12 +11,13 @@ A website that converts numbers input by the user into Roman numerals, which the
 
 ### Specifications
 
-|:---Behavior---:|:---Input---:|:---Output---:|
+|Behavior|Input|Output|
+|:---:|:---:|:---:|
 |Reject user input if it is a non-numerical string|"evilUser"|"Please enter a number"|
 |Reject user input if the number is greater than 3,999|4002|"Please enter a number less than 4000"|
 |Split the number into sub-numbers of thousands, hundreds, tens, and ones|1499| 1000, 400, 90, 9|
 |Populate each sub-number with as many Ns as warranted, where N is M for thousands, C for hundreds, X for tens, and I for ones|1000, 400, 90, 9|M, CCCC, XXXXXXXXX, IIIIIIIII|
-|If there are nine of any of these strings, replace the last eight with the N in the next order of magnitude (i.e., M for C, C for X, X for I)|M, CCCC, XC, IX|
+|If there are nine of any of these strings, replace the last eight with the N in the next order of magnitude (i.e., M for C, C for X, X for I)|M, CCCC, XXXXXXXXX, IIIIIIIII|M, CCCC, XC, IX|
 |If there are exactly four of any symbol remaining, replace the last three with the half-magnitude value corresponding to the symbol (i.e., D for C, L for X, and V for I)|M, CCCC, XXXX, IIII| M, CD, XL, IV|
 |If there are more than three of any symbol remaining, replace the first five with the half-magnitude value corresponding to the symbol (i.e., D for C, L for X, and V for I)| CCCCCCCC, XXXXXXX, IIIIII|DCCC, LXX, VI|
 
